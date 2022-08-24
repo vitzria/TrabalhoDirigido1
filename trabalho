@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numBotas, tam, i, par=0, j;
+    char lado[1];
+    printf("\nQuantas botas foram entregues no total? ");
+    scanf("%d" , &numBotas);
+        while(numBotas<2 || numBotas>10000 || numBotas%2!=0){
+            printf("\nValor invalido!");
+            printf("\nQuantas botas foram entregues no total? ");
+            scanf("%d" , &numBotas);
+        }
+
+    for(i=0;i<numBotas;i++){
+        printf("\n[%d] Digite o tamanho e o lado da bota (d ou e): " , i+1);
+        scanf("%d %c" , &tam, &lado);
+            while(tam<30 || tam>60){
+                printf("\nTamanho invalido!");
+                printf("\n[%d] Digite o tamanho e o lado da bota (d ou e): " , i+1);
+                scanf("%d %c" , &tam, &lado);
+            }
+            while(lado!='d' && lado!='e'){
+                printf("\nLado invalido!");
+                printf("\n[%d] Digite o tamanho e o lado da bota (d ou e): " , i+1);
+                scanf("%d %c" , &tam, &lado);
+            }
+    }
+    return 0;
+}
