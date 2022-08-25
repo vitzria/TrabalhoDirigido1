@@ -3,8 +3,8 @@
 
 int main()
 {
-    int numBotas, tam, i, par=0, j;
-    char lado[1];
+    int numBotas, tam[numBotas], i, par=0, j;
+    char lado[numBotas];
     printf("\nQuantas botas foram entregues no total? ");
     scanf("%d" , &numBotas);
         while(numBotas<2 || numBotas>10000 || numBotas%2!=0){
@@ -15,16 +15,16 @@ int main()
 
     for(i=0;i<numBotas;i++){
         printf("\n[%d] Digite o tamanho e o lado da bota (d ou e): " , i+1);
-        scanf("%d %c" , &tam, &lado);
-            while(tam<30 || tam>60){
+        scanf("%d %c" , &tam[i] , &lado[i]);
+            while(tam[i]<30 || tam[i]>60){
                 printf("\nTamanho invalido!");
                 printf("\n[%d] Digite o tamanho e o lado da bota (d ou e): " , i+1);
-                scanf("%d %c" , &tam, &lado);
+                scanf("%d %c" , &tam[i], &lado[i]);
             }
-            while(lado!='d' && lado!='e'){
+            while(lado[i]!='d' || lado[i]!='e'){
                 printf("\nLado invalido!");
                 printf("\n[%d] Digite o tamanho e o lado da bota (d ou e): " , i+1);
-                scanf("%d %c" , &tam, &lado);
+                scanf("%d %c" , &tam[i], &lado[i]);
             }
     }
     return 0;
